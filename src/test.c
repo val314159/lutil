@@ -14,10 +14,10 @@
 
 int main() {
     unsigned char hash[20];
-  unsigned char msg[] = "";
-  ripemd160(msg, strlen((char*)msg), hash);
-  for(int n=0; n<20; n++) printf("%02x", hash[n]);
-  printf("\n");  
+    unsigned char msg[] = "";
+    ripemd160(msg, strlen((char*)msg), hash);
+    for(int n=0; n<20; n++) printf("%02x", hash[n]);
+    printf("\n");  
 
     unsigned char public_key[32], private_key[64], seed[32], scalar[32];
     unsigned char other_public_key[32], other_private_key[64];
