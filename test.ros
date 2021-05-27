@@ -1,0 +1,21 @@
+#|-*- mode:lisp -*-
+exec ros +Q -- $0 "$@" # |#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp(ql:quickload '() :silent t)
+  )
+(push (truename ".") asdf:*central-registry*)
+(require :lutil)
+(defpackage :ros.script.test.3831066192 (:use :cl :lutil))
+(in-package :ros.script.test.3831066192)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (let ((x (split-string "qw er  rt")))
+    (efmt "ASDFSDAF~%")
+    (fmt "[~s]~%" x)
+    (fmt "[~s]~%" (join-string x))
+    (fmt "[~s]~%" (join-string (list)))
+    (fmt "[~s]~%" (join-string x #\/ #\/))
+    (fmt "[~s]~%" (join-string (list) #\/ #\/))))
+;;; vim: set ft=lisp lisp:
