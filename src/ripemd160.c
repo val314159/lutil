@@ -28,7 +28,8 @@
 #include <string.h>
 
 #include "ripemd160.h"
-#include "memzero.h"
+
+#define memzero(d,s) memset(d,0,s)
 
 /*
  * 32-bit integer manipulation macros (little endian)
