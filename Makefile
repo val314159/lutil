@@ -1,5 +1,4 @@
-q:
-	./ripemd160 </dev/null
-	echo | ./ripemd160
+liblutil.dylib: *.c *.h
+	$(CC) $(CFLAGS) -shared -o $@ *.c
 all:
 	./test.ros

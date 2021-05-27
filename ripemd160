@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+import sys, hashlib
+def ripemd160(s=b''):    return hashlib.new('ripemd160', s)
+def ripemd160hex(s=b''): return ripemd160(s).hexdigest()
+def reads(f=sys.stdin):  return ''.join(f.readlines()).encode()
+print(ripemd160(reads()).hexdigest())
