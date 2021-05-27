@@ -3,14 +3,22 @@
 #include <string.h>
 #include <time.h>
 
+#include "ripemd160.h"
+
 /* #define ED25519_DLL */
 #include "src/ed25519.h"
+#include "src/sha512.h"
 
-#include "src/ge.h"
-#include "src/sc.h"
-
+//#include "src/ge.h"
+//#include "src/sc.h"
 
 int main() {
+    unsigned char hash[20];
+  unsigned char msg[] = "";
+  ripemd160(msg, strlen((char*)msg), hash);
+  for(int n=0; n<20; n++) printf("%02x", hash[n]);
+  printf("\n");  
+
     unsigned char public_key[32], private_key[64], seed[32], scalar[32];
     unsigned char other_public_key[32], other_private_key[64];
     unsigned char shared_secret[32], other_shared_secret[32];
